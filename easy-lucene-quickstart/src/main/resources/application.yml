@@ -1,0 +1,29 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: easy-lucene
+  jackson:
+    time-zone: Asia/Shanghai
+    default-property-inclusion: non_null
+  servlet:
+    multipart:
+      max-request-size: 10737421824
+      max-file-size: 10737421824
+  mvc:
+    converters:
+      preferred-json-mapper: jackson
+
+logging:
+  level:
+    root: info
+
+embedded-lucene:
+  # Lucene索引对应的Java Entity所在包路径
+  entity-packages:
+    - com.yida.lucene
+  # Lucene索引写入目录
+  index-path: "/Users/yida/lucene-data"
